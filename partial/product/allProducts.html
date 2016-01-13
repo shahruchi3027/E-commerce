@@ -1,0 +1,94 @@
+<div class="container">
+<div class="col-md-4">
+        <ul class="nav nav-pills nav-stacked">
+            <h2>Products' Type</h2>
+            <li class="active"><a data-toggle="tab" data-target="#tab2">Dell</a></li>
+            <li><a data-toggle="tab" data-target="#tab3">MacBook</a></li>
+            <li><a data-toggle="tab" data-target="#tab4">HP</a></li>
+            <li><a data-toggle="tab" data-target="#tab5">Lenovo</a></li>
+        </ul>
+    </div>
+    <div class="col-md-8" style="margin-top:5%;"> 
+  <div class="tab-content">
+    <div class="input-group">
+<h4>Search :</h4>
+<input type="text" ng-model="search" class="form-control">
+</div>
+<div class="input-group">
+    <label >
+        <input type="radio" ng-model="direction" name="direction" checked>
+        Ascending
+    </label>
+    <label >
+        <input type="radio" ng-model="direction" name="direction" value="reverse">
+        Descending
+    </label>
+</div>
+        <div class="tab-pane active" id="tab2">
+            <table class="table table-striped" border="1" style="width:100%;border-color:#ddd">
+                <tr>
+                    <th>Dell Laptops</th>
+                    <th>Image</th>
+                </tr>
+                <tr ng-repeat="product in  products | filter:search |orderBy:orderCat:direction ">
+    <td ng-if="product.bname == 'Dell'"><a href="#/productdetail/{{product.pono}}">{{product.poname}}</a></td>
+    <td ng-if="product.bname == 'Dell'"><img ng-src="{{product.img}}" alt="{{product.poname}}" width="100"></td>
+                </tr>
+            </table>
+        </div>
+   <div class="tab-pane" id="tab3">
+            <table class="table table-striped" border="1" style="width:100%;border-color:#ddd">
+                <tr>
+                    <th>MacBooks</th>
+                    <th>Image</th>
+                </tr>     
+                <tr ng-repeat="product in  products | filter:search |orderBy:orderCat:direction">
+    <td ng-if="product.bname == 'MacBook'"><a href="#/productdetail/{{product.pono}}">{{product.poname}}</a></td>
+    <td ng-if="product.bname == 'MacBook'"><img ng-src="{{product.img}}" alt="{{product.poname}}" width="100"></td>
+                </tr>
+            </table>
+        </div>
+   <div class="tab-pane" id="tab4">
+            <table class="table table-striped" border="1" style="width:100%;border-color:#ddd">
+                <tr>
+                    <th>HP Laptops</th>
+                    <th>Image</th>
+                </tr>  
+                <tr ng-repeat="product in  products | filter:search |orderBy:orderCat:direction">
+    <td ng-if="product.bname == 'hp'"><a href="#/productdetail/{{product.pono}}">{{product.poname}}</a></td>
+    <td ng-if="product.bname == 'hp'"><img ng-src="{{product.img}}" alt="{{product.poname}}" width="100"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab-pane" id="tab5">
+            <table class="table table-striped" border="1" style="width:100%;border-color:#ddd">
+                <tr>
+                    <th>Lenovo Laptops</th>
+                    <th>Image</th>
+                </tr>  
+                <tr ng-repeat="product in  products | filter:search |orderBy:orderCat:direction ">
+    <td ng-if="product.bname == 'Lenovo'"><a href="#/productdetail/{{product.pono}}">{{product.poname}}</a></td>
+    <td ng-if="product.bname == 'Lenovo'"><img ng-src="{{product.img}}" alt="{{product.poname}}" width="100"></td>
+                </tr>
+            </table>
+        </div>
+  </div>
+    </div>
+  </div>
+  <!--<h3 class="well well-sm">Our Products</h3>
+<table class="table table-striped">
+    <tr>
+        <th><a href=""  ng-click="pono()">Product Code</a></th>
+      <th><a href=""  ng-click="poname()">Product Name</a></th>
+      <th ><a href="" ng-click="poprice()">Price</a></th>
+      <th>Image</th>
+    </tr>
+    <tr ng-repeat="eobj in products | filter:search |orderBy:orderCat:direction">
+      <td class="col-sm-2"><a href="#/productdetail/{{eobj.pono}}">{{eobj.pono}} </a></td>
+      <td>{{eobj.poname}} </td>
+      <td>{{eobj.poprice | currency:"$"}} </td>
+      <td><img src="{{eobj.img}}"></td>
+  
+    </tr>
+  </table>-->
+  
